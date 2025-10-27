@@ -49,9 +49,6 @@ fetch(endpoint)
             rowEl.innerHTML += createMarkup(data[i])
         }
 
-
-
-
     })
 
 

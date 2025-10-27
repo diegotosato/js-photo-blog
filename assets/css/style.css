@@ -79,15 +79,99 @@ main {
 }
 
 .card .card-text {
+    width: 100%;
     font-size: 1.3rem;
     margin-top: 1rem;
     color: grey;
     font-family: "Sometype Mono", monospace;
 }
 
-.card .card-title{
+.card .card-title {
+    width: 100%;
     font-size: 2rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-family: "Edu TAS Beginner", cursive;
+}
+
+
+
+
+
+
+
+
+
+/* Breakpoints */
+@media screen and (max-width: 1470px) {
+    .container {
+        width: 80%;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1270px) {
+    #row {
+        gap: 1.2rem;
+    }
+
+    .card {
+        width: calc(100% / 3 - 1.2rem);
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 1080px) {
+
+    #row {
+        gap: 2rem;
+    }
+
+    .card {
+        width: calc(100% / 2 - 1rem);
+    }
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+    main {
+        padding: 3rem 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .container {
+        width: 85%;
+        margin: 0 auto;
+    }
 }
