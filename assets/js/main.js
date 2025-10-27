@@ -43,12 +43,14 @@ const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
 fetch(endpoint)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
 
-        for (let i = 0; i < 6; i++) {
-            rowEl.innerHTML += createMarkup(data[i])
-        }
+        // for (let i = 0; i < 6; i++) {
+        //     rowEl.innerHTML += createMarkup(data[i])
+        // }
 
+        data.slice().forEach(item => {
+            rowEl.innerHTML += createMarkup(item);
+        });
     })
 
 
