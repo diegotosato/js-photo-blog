@@ -13,33 +13,49 @@ create function to create the html code of the card
 create loop to print the card in the page
 */
 
-const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
-
-fetch(endpoint)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
 
 
 
-
-const rowEl = document.getElementById('row')
-console.log(rowEl);
-
+/* FUNCTIONS */
 function createMarkup(object) {
     return `
             <div class="card">
                 <img class="pin" src="./assets/img/pin.svg" alt="pin">
                 <img class="card-image" src="${object.url}" alt="img">
-                    <h5 class="card-title">${object.title}</h5>
-                    <p class="card-text">
-                        ${object.date}
-                    </p>
+                <p class="card-text">
+                    ${object.date}
+                </p>
+                <h5 class="card-title">
+                    ${object.title}
+                </h5>
             </div>
         `
 }
 
-for (let i = 0; i < 6; i++) {
-    rowEl.innerHTML += createMarkup(fetch)
-}
+
+/* Isolate DOM Element */
+const rowEl = document.getElementById('row')
+console.log(rowEl);
+
+
+/* AJAX call */
+const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
+fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        for (let i = 0; i < 6; i++) {
+            rowEl.innerHTML += createMarkup(data[i])
+        }
+
+
+
+
+    })
+
+
+
+
+
+

@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Edu TAS Beginner", cursive;
 }
 
 .debug * {
@@ -31,6 +30,7 @@ h1 {
     text-align: center;
     font-size: 6rem;
     text-transform: uppercase;
+    font-family: "Edu TAS Beginner", cursive;
 }
 
 
@@ -79,13 +79,15 @@ main {
 }
 
 .card .card-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
     color: grey;
+    font-family: "Sometype Mono", monospace;
 }
 
 .card .card-title{
     font-size: 2rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    font-family: "Edu TAS Beginner", cursive;
 }
