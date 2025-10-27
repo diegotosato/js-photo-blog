@@ -12,19 +12,9 @@
         border: 1px dashed black;
     }
 
-    main {
-        padding: 5rem 0;
-    }
 
-    .container {
-        width: 70%;
-        margin: 0 auto;
-    }
 
-    .row {
-        display: flex;
-        gap: 2rem;
-    }
+
 
     .card {
         width: calc(100% / 3);
@@ -53,6 +43,15 @@
 }
 
 
+
+
+/* Body */
+body {
+    background-image: url(../img/cork.png);
+    background-size: 25%;
+}
+
+
 /* Header */
 
 header {
@@ -66,3 +65,27 @@ h1 {
     font-size: 6rem;
     text-transform: uppercase;
 }
+
+
+/* Main */
+main {
+    padding: 5rem 0;
+}
+
+/* container */
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* row */
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+
+
+/* Card generics */
