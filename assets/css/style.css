@@ -5,41 +5,8 @@
     font-family: "Edu TAS Beginner", cursive;
 }
 
-.debug {
-    background-color: brown;
-
-    * {
-        border: 1px dashed black;
-    }
-
-
-
-
-
-    .card {
-        width: calc(100% / 3);
-        padding: 1rem;
-        background-color: white;
-        position: relative;
-
-        #pin {
-            position: absolute;
-            display: block;
-            width: 10%;
-            top: 1%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        img {
-            width: 100%;
-        }
-
-        .card-text {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-    }
+.debug * {
+    border: 1px dashed black;
 }
 
 
@@ -89,3 +56,28 @@ main {
 
 
 /* Card generics */
+.card {
+    width: calc(100% / 3);
+    padding: 1rem;
+    background-color: white;
+    position: relative;
+    box-shadow: 3px 3px 5px 0px rgb(124 124 124);
+}
+
+.pin {
+    position: absolute;
+    display: block;
+    width: 10%;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card .card-image {
+    width: 100%;
+}
+
+.card .card-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
