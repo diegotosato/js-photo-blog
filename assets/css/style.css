@@ -49,6 +49,7 @@ main {
 .row {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 
@@ -57,7 +58,7 @@ main {
 
 /* Card generics */
 .card {
-    width: calc(100% / 3);
+    width: calc(100% / 3 - 2rem);
     padding: 1rem;
     background-color: white;
     position: relative;
@@ -79,5 +80,5 @@ main {
 
 .card .card-text {
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
