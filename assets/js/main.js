@@ -42,5 +42,4 @@ function createMarkup(object) {
 
 for (let i = 0; i < 6; i++) {
     rowEl.innerHTML += createMarkup(fetch)
-    
 }
