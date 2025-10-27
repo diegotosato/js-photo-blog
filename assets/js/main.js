@@ -21,7 +21,10 @@ fetch(endpoint)
         console.log(data);
     })
 
-const rowEl = document.getElementsByClassName('row')
+
+
+
+const rowEl = document.getElementById('row')
 console.log(rowEl);
 
 function createMarkup(object) {
@@ -35,4 +38,9 @@ function createMarkup(object) {
                     </p>
             </div>
         `
+}
+
+for (let i = 0; i < 6; i++) {
+    rowEl.innerHTML += createMarkup(fetch)
+    
 }
