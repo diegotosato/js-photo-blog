@@ -144,7 +144,7 @@ main {
     color: white;
 }
 
-.overlay img {
+.overlay .overlay-image {
     height: 70%;
 }
 
