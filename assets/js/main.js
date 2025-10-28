@@ -30,6 +30,7 @@ function createCardMarkup(object) {
                         ${object.title}
                     </h5>
     `
+
     rowEl.appendChild(divEl)
     return divEl
 }
@@ -42,8 +43,6 @@ function createOverlayMarkup(object) {
     sectionEl.setAttribute('class', 'overlay')
     sectionEl.classList.add('d-none')
 
-    
-    
     sectionEl.innerHTML = `
         <button class="close-overlay">Chiudi</button>
         <img class="overlay-image" src="${object.url}" alt="overlay_image">
@@ -70,8 +69,7 @@ function createOverlayMarkup(object) {
 const rowEl = document.getElementById('row')
 // console.log(rowEl);
 
-const buttonEl = document.getElementById('close-overlay')
-// console.log(buttonEl);
+
 
 
 
@@ -88,7 +86,7 @@ fetch(endpoint)
 
             const divEl = createCardMarkup(object);
             const sectionEl = createOverlayMarkup(object);
-            const btn = document.querySelector('button')
+            const buttonEl = document.querySelector('button')
             const body = document.querySelector('body')
 
             
@@ -97,7 +95,7 @@ fetch(endpoint)
                 body.classList.toggle('overflow')
             })
             
-            btn.addEventListener('click', () => {
+            buttonEl.addEventListener('click', () => {
                 
                 sectionEl.classList.toggle('d-none')
                 body.classList.toggle('overflow')
