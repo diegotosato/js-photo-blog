@@ -15,7 +15,7 @@
 
 
 
-/* Toggle class */
+/* Toggle classes */
 .d-none {
     display: none;
 }
@@ -26,6 +26,20 @@
 
 .overflow {
     overflow: hidden;
+}
+
+.card-hover-effect {
+    cursor: pointer;
+    scale: 105%;
+    rotate: 10deg;
+    z-index: 1;
+    transition: all 0.3s;
+    box-shadow: 8px 8px 20px 5px rgb(95, 95, 95);
+
+
+    .pin {
+        display: none;
+    }
 }
 
 
@@ -114,7 +128,7 @@ main {
     font-family: "Edu TAS Beginner", cursive;
 }
 
-.card:hover {
+/* .card:hover {
     cursor: pointer;
     scale: 105%;
     rotate: 10deg;
@@ -126,7 +140,7 @@ main {
     .pin {
         display: none;
     }
-}
+} */
 
 
 

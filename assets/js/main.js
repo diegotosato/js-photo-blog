@@ -20,6 +20,7 @@ create loop to print the card in the page
 function createCardMarkup(object) {
     const divEl = document.createElement('div')
     divEl.setAttribute('class', 'card')
+    // divEl.classList.add('card-hover-effect')
     divEl.innerHTML = `
                     <img class="pin" src="./assets/img/pin.svg" alt="pin">
                     <img class="card-image" src="${object.url}" alt="img">
@@ -90,11 +91,21 @@ fetch(endpoint)
             const body = document.querySelector('body')
 
             
+            
+            divEl.addEventListener('mouseover', () => {
+                divEl.classList.add('card-hover-effect')
+            })
+            
+            divEl.addEventListener('mouseleave', () => {
+                divEl.classList.remove('card-hover-effect')
+            })
+            
             divEl.addEventListener('click', () => {
                 sectionEl.classList.toggle('d-none')
                 body.classList.toggle('overflow')
+                divEl.classList.remove('card-hover-effect')
             })
-            
+
             buttonEl.addEventListener('click', () => {
                 
                 sectionEl.classList.toggle('d-none')
