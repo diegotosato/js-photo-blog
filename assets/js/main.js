@@ -18,24 +18,45 @@ create loop to print the card in the page
 
 /* FUNCTIONS */
 function createMarkup(object) {
-    return `
-            <div class="card">
-                <img class="pin" src="./assets/img/pin.svg" alt="pin">
-                <img class="card-image" src="${object.url}" alt="img">
-                <p class="card-text">
-                    ${object.date}
-                </p>
-                <h5 class="card-title">
-                    ${object.title}
-                </h5>
-            </div>
-        `
+    const divEl = document.createElement('div')
+    divEl.setAttribute('class', 'card')
+    divEl.innerHTML = `
+                    <img class="pin" src="./assets/img/pin.svg" alt="pin">
+                    <img class="card-image" src="${object.url}" alt="img">
+                    <p class="card-text">
+                        ${object.date}
+                    </p>
+                    <h5 class="card-title">
+                        ${object.title}
+                    </h5>
+    `
+    rowEl.appendChild(divEl)
+    return divEl
+    // `
+    //         <div class="card">
+    //             <img class="pin" src="./assets/img/pin.svg" alt="pin">
+    //             <img class="card-image" src="${object.url}" alt="img">
+    //             <p class="card-text">
+    //                 ${object.date}
+    //             </p>
+    //             <h5 class="card-title">
+    //                 ${object.title}
+    //             </h5>
+    //         </div>
+    //     `
 }
 
 
 /* Isolate DOM Element */
 const rowEl = document.getElementById('row')
 console.log(rowEl);
+
+const buttonEl = document.getElementById('close-overlay')
+console.log(buttonEl);
+
+const overlayEl = document.getElementById('overlay')
+console.log(overlayEl);
+
 
 
 /* AJAX call */
@@ -48,23 +69,25 @@ fetch(endpoint)
         //     rowEl.innerHTML += createMarkup(data[i])
         // }
 
-        data.slice().forEach(item => {
-            rowEl.innerHTML += createMarkup(item);
+        data.slice().forEach(object => {
+            createMarkup(object);
         });
+
+        let cardEl = document.getElementsByClassName('card')
+        console.log(cardEl.length);
+
+
+        Array.from(cardEl).forEach(function (card, index) {
+            card.addEventListener('click', function () {
+                overlayEl.classList.toggle('d-none')
+            });
+        });
+
     })
 
 
-
-/* Isolate DOM Element */
-const buttonEl = document.getElementById('close-overlay')
-console.log(buttonEl);
-
-const overlayEl = document.getElementById('overlay')
-console.log(overlayEl);
-
 buttonEl.addEventListener('click', () => {
-    overlayEl.classList.add('d-none')
+    overlayEl.classList.toggle('d-none')
 })
-
 
 
