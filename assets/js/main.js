@@ -89,17 +89,19 @@ fetch(endpoint)
             const divEl = createCardMarkup(object);
             const sectionEl = createOverlayMarkup(object);
             const btn = document.querySelector('button')
-
+            const body = document.querySelector('body')
 
             
             divEl.addEventListener('click', () => {
                 sectionEl.classList.toggle('d-none')
+                body.classList.toggle('overflow')
             })
             
             btn.addEventListener('click', () => {
-                // console.log(btn);
                 
                 sectionEl.classList.toggle('d-none')
+                body.classList.toggle('overflow')
+
             })
             return [sectionEl, divEl]
         });
