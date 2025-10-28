@@ -49,13 +49,13 @@ function createMarkup(object) {
 
 /* Isolate DOM Element */
 const rowEl = document.getElementById('row')
-console.log(rowEl);
+// console.log(rowEl);
 
 const buttonEl = document.getElementById('close-overlay')
-console.log(buttonEl);
+// console.log(buttonEl);
 
 const overlayEl = document.getElementById('overlay')
-console.log(overlayEl);
+// console.log(overlayEl);
 
 
 
@@ -74,14 +74,16 @@ fetch(endpoint)
         });
 
         let cardEl = document.getElementsByClassName('card')
-        console.log(cardEl.length);
 
 
-        Array.from(cardEl).forEach(function (card, index) {
+        Array.from(cardEl).forEach(function (card) {
             card.addEventListener('click', function () {
                 overlayEl.classList.toggle('d-none')
             });
         });
+
+        
+        
 
     })
 
