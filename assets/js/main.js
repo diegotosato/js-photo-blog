@@ -39,13 +39,13 @@ function createCardMarkup(object) {
 
 function createOverlayMarkup(object) {
     const sectionEl = document.createElement('section')
-    sectionEl.setAttribute('id', 'overlay')
-    sectionEl.setAttribute('class', 'd-none')
+    sectionEl.setAttribute('class', 'overlay')
+    sectionEl.classList.add('d-none')
 
     
     
     sectionEl.innerHTML = `
-        <button id="close-overlay">Chiudi</button>
+        <button class="close-overlay">Chiudi</button>
         <img class="overlay-image" src="${object.url}" alt="overlay_image">
     `
 
