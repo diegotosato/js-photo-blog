@@ -17,7 +17,7 @@ create loop to print the card in the page
 
 
 /* FUNCTIONS */
-function createMarkup(object) {
+function createCardMarkup(object) {
     const divEl = document.createElement('div')
     divEl.setAttribute('class', 'card')
     divEl.innerHTML = `
@@ -32,19 +32,38 @@ function createMarkup(object) {
     `
     rowEl.appendChild(divEl)
     return divEl
-    // `
-    //         <div class="card">
-    //             <img class="pin" src="./assets/img/pin.svg" alt="pin">
-    //             <img class="card-image" src="${object.url}" alt="img">
-    //             <p class="card-text">
-    //                 ${object.date}
-    //             </p>
-    //             <h5 class="card-title">
-    //                 ${object.title}
-    //             </h5>
-    //         </div>
-    //     `
 }
+
+
+
+
+function createOverlayMarkup(object) {
+    const sectionEl = document.createElement('section')
+    sectionEl.setAttribute('id', 'overlay')
+    sectionEl.setAttribute('class', 'd-none')
+
+    
+    
+    sectionEl.innerHTML = `
+        <button id="close-overlay">Chiudi</button>
+        <img class="overlay-image" src="${object.url}" alt="overlay_image">
+    `
+
+    document.body.prepend(sectionEl)
+
+    return sectionEl
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Isolate DOM Element */
@@ -54,8 +73,8 @@ const rowEl = document.getElementById('row')
 const buttonEl = document.getElementById('close-overlay')
 // console.log(buttonEl);
 
-const overlayEl = document.getElementById('overlay')
-// console.log(overlayEl);
+
+
 
 
 
@@ -65,31 +84,31 @@ fetch(endpoint)
     .then(response => response.json())
     .then(data => {
 
-        // for (let i = 0; i < 6; i++) {
-        //     rowEl.innerHTML += createMarkup(data[i])
-        // }
-
         data.slice().forEach(object => {
-            createMarkup(object);
+
+            const divEl = createCardMarkup(object);
+            const sectionEl = createOverlayMarkup(object);
+            const btn = document.querySelector('button')
+
+
+            
+            divEl.addEventListener('click', () => {
+                sectionEl.classList.toggle('d-none')
+            })
+            
+            btn.addEventListener('click', () => {
+                // console.log(btn);
+                
+                sectionEl.classList.toggle('d-none')
+            })
+            return [sectionEl, divEl]
         });
 
-        let cardEl = document.getElementsByClassName('card')
 
 
-        Array.from(cardEl).forEach(function (card) {
-            card.addEventListener('click', function () {
-                overlayEl.classList.toggle('d-none')
-            });
-        });
-
-        
-        
 
     })
 
 
-buttonEl.addEventListener('click', () => {
-    overlayEl.classList.toggle('d-none')
-})
 
 
