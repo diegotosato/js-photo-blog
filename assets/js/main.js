@@ -55,6 +55,16 @@ fetch(endpoint)
 
 
 
+/* Isolate DOM Element */
+const buttonEl = document.getElementById('close-overlay')
+console.log(buttonEl);
+
+const overlayEl = document.getElementById('overlay')
+console.log(overlayEl);
+
+buttonEl.addEventListener('click', () => {
+    overlayEl.classList.add('d-none')
+})
 
 
 

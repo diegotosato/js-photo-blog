@@ -1,11 +1,23 @@
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
+/* Debug */
 .debug * {
     border: 1px dashed black;
+}
+
+
+
+
+/* Toggle class */
+.d-none{
+    display: none;
 }
 
 
@@ -104,21 +116,19 @@ main {
     height: 100vh;
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     z-index: 1;
 }
 
-#overlay .close-overlay {
+#overlay #close-overlay {
     padding: 0.25rem 0.5rem;
     font-family: "Edu TAS Beginner", cursive;
     font-size: 1.5rem;
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+    display: block;
 }
 
 #overlay img {
