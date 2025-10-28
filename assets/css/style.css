@@ -80,7 +80,6 @@ main {
     background-color: white;
     position: relative;
     box-shadow: 3px 3px 5px 0px rgb(124 124 124);
-    cursor: pointer;
 }
 
 .pin {
@@ -111,6 +110,20 @@ main {
     text-transform: uppercase;
     font-family: "Edu TAS Beginner", cursive;
 }
+
+.card:hover {
+    cursor: pointer;
+    scale: 105%;
+    rotate: 10deg;
+    z-index: 1;
+    transition: all 0.3s;
+
+    .pin{
+        display: none;
+    }
+}
+
+
 
 
 
